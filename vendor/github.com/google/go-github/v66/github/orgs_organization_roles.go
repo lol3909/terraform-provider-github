@@ -27,29 +27,6 @@ type CustomOrgRoles struct {
 	UpdatedAt   *Timestamp    `json:"updated_at,omitempty"`
 	Source      *string       `json:"source,omitempty"`
 	BaseRole    *string       `json:"base_role,omitempty"`
-<<<<<<<< HEAD:vendor/github.com/google/go-github/v66/github/orgs_organization_roles.go
-========
-}
-
-// OrganizationCustomRepoRoles represents custom repository roles available in specified organization.
-type OrganizationCustomRepoRoles struct {
-	TotalCount      *int               `json:"total_count,omitempty"`
-	CustomRepoRoles []*CustomRepoRoles `json:"custom_roles,omitempty"`
-}
-
-// CustomRepoRoles represents custom repository roles for an organization.
-// See https://docs.github.com/enterprise-cloud@latest/organizations/managing-peoples-access-to-your-organization-with-roles/managing-custom-repository-roles-for-an-organization
-// for more information.
-type CustomRepoRoles struct {
-	ID          *int64        `json:"id,omitempty"`
-	Name        *string       `json:"name,omitempty"`
-	Description *string       `json:"description,omitempty"`
-	BaseRole    *string       `json:"base_role,omitempty"`
-	Permissions []string      `json:"permissions,omitempty"`
-	Org         *Organization `json:"organization,omitempty"`
-	CreatedAt   *Timestamp    `json:"created_at,omitempty"`
-	UpdatedAt   *Timestamp    `json:"updated_at,omitempty"`
->>>>>>>> 9fdf83e2 (Merge branch 'main' into Support-repository_property-for-github_organization_ruleset):vendor/github.com/google/go-github/v65/github/orgs_custom_roles.go
 }
 
 // CreateOrUpdateOrgRoleOptions represents options required to create or update a custom organization role.
@@ -57,18 +34,7 @@ type CreateOrUpdateOrgRoleOptions struct {
 	Name        *string  `json:"name,omitempty"`
 	Description *string  `json:"description,omitempty"`
 	Permissions []string `json:"permissions"`
-<<<<<<<< HEAD:vendor/github.com/google/go-github/v66/github/orgs_organization_roles.go
 	BaseRole    *string  `json:"base_role,omitempty"`
-========
-}
-
-// CreateOrUpdateCustomRepoRoleOptions represents options required to create or update a custom repository role.
-type CreateOrUpdateCustomRepoRoleOptions struct {
-	Name        *string  `json:"name,omitempty"`
-	Description *string  `json:"description,omitempty"`
-	BaseRole    *string  `json:"base_role,omitempty"`
-	Permissions []string `json:"permissions"`
->>>>>>>> 9fdf83e2 (Merge branch 'main' into Support-repository_property-for-github_organization_ruleset):vendor/github.com/google/go-github/v65/github/orgs_custom_roles.go
 }
 
 // ListRoles lists the custom roles available in this organization.

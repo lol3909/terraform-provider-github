@@ -6,7 +6,7 @@ import (
 	"reflect"
 	"sort"
 
-	"github.com/google/go-github/v65/github"
+	"github.com/google/go-github/v66/github"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 )
 
@@ -177,7 +177,7 @@ func expandRepositoryPropertyConditions(v []interface{}) *github.RulesetReposito
 			propertyMap := v.(map[string]interface{})
 			property := github.RulesetRepositoryPropertyTargetParameters{
 				Name:   propertyMap["name"].(string),
-				Source: propertyMap["source"].(string),
+				Source: github.String(propertyMap["source"].(string)),
 				Values: convertInterfaceSliceToStringSlice(propertyMap["property_values"].([]interface{})),
 			}
 			include = append(include, property)
@@ -189,7 +189,7 @@ func expandRepositoryPropertyConditions(v []interface{}) *github.RulesetReposito
 			propertyMap := v.(map[string]interface{})
 			property := github.RulesetRepositoryPropertyTargetParameters{
 				Name:   propertyMap["name"].(string),
-				Source: propertyMap["source"].(string),
+				Source: github.String(propertyMap["source"].(string)),
 				Values: convertInterfaceSliceToStringSlice(propertyMap["property_values"].([]interface{})),
 			}
 			exclude = append(exclude, property)

@@ -14798,7 +14798,6 @@ func (p *PagesUpdate) GetSource() *PagesSource {
 	return p.Source
 }
 
-<<<<<<<< HEAD:vendor/github.com/google/go-github/v66/github/github-accessors.go
 // GetCurrentUserCanApprove returns the CurrentUserCanApprove field if it's non-nil, zero value otherwise.
 func (p *PendingDeployment) GetCurrentUserCanApprove() bool {
 	if p == nil || p.CurrentUserCanApprove == nil {
@@ -14871,8 +14870,6 @@ func (p *PendingDeploymentEnvironment) GetURL() string {
 	return *p.URL
 }
 
-========
->>>>>>>> 9fdf83e2 (Merge branch 'main' into Support-repository_property-for-github_organization_ruleset):vendor/github.com/google/go-github/v65/github/github-accessors.go
 // GetAccessGrantedAt returns the AccessGrantedAt field if it's non-nil, zero value otherwise.
 func (p *PersonalAccessToken) GetAccessGrantedAt() Timestamp {
 	if p == nil || p.AccessGrantedAt == nil {

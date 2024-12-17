@@ -52,11 +52,7 @@ type RulesetRepositoryIDsConditionParameters struct {
 type RulesetRepositoryPropertyTargetParameters struct {
 	Name   string   `json:"name"`
 	Values []string `json:"property_values"`
-<<<<<<<< HEAD:vendor/github.com/google/go-github/v66/github/repos_rules.go
 	Source *string  `json:"source,omitempty"`
-========
-	Source string   `json:"source"`
->>>>>>>> 9fdf83e2 (Merge branch 'main' into Support-repository_property-for-github_organization_ruleset):vendor/github.com/google/go-github/v65/github/repos_rules.go
 }
 
 // RulesetRepositoryPropertyConditionParameters represents the conditions object for repository_property.
@@ -89,7 +85,6 @@ type RuleFileParameters struct {
 	RestrictedFilePaths *[]string `json:"restricted_file_paths"`
 }
 
-<<<<<<<< HEAD:vendor/github.com/google/go-github/v66/github/repos_rules.go
 // RuleMaxFilePathLengthParameters represents the max_file_path_length rule parameters.
 type RuleMaxFilePathLengthParameters struct {
 	MaxFilePathLength int `json:"max_file_path_length"`
@@ -105,8 +100,6 @@ type RuleMaxFileSizeParameters struct {
 	MaxFileSize int64 `json:"max_file_size"`
 }
 
-========
->>>>>>>> 9fdf83e2 (Merge branch 'main' into Support-repository_property-for-github_organization_ruleset):vendor/github.com/google/go-github/v65/github/repos_rules.go
 // UpdateAllowsFetchAndMergeRuleParameters represents the update rule parameters.
 type UpdateAllowsFetchAndMergeRuleParameters struct {
 	UpdateAllowsFetchAndMerge bool `json:"update_allows_fetch_and_merge"`
@@ -147,11 +140,7 @@ type MergeQueueRuleParameters struct {
 
 // RequiredStatusChecksRuleParameters represents the required_status_checks rule parameters.
 type RequiredStatusChecksRuleParameters struct {
-<<<<<<<< HEAD:vendor/github.com/google/go-github/v66/github/repos_rules.go
 	DoNotEnforceOnCreate             *bool                      `json:"do_not_enforce_on_create,omitempty"`
-========
-	DoNotEnforceOnCreate             bool                       `json:"do_not_enforce_on_create"`
->>>>>>>> 9fdf83e2 (Merge branch 'main' into Support-repository_property-for-github_organization_ruleset):vendor/github.com/google/go-github/v65/github/repos_rules.go
 	RequiredStatusChecks             []RuleRequiredStatusChecks `json:"required_status_checks"`
 	StrictRequiredStatusChecksPolicy bool                       `json:"strict_required_status_checks_policy"`
 }
@@ -515,7 +504,6 @@ func (r *RepositoryRule) UnmarshalJSON(data []byte) error {
 		rawParams := json.RawMessage(bytes)
 
 		r.Parameters = &rawParams
-<<<<<<<< HEAD:vendor/github.com/google/go-github/v66/github/repos_rules.go
 	case "code_scanning":
 		params := RequiredCodeScanningRuleParameters{}
 		if err := json.Unmarshal(*RepositoryRule.Parameters, &params); err != nil {
@@ -552,8 +540,6 @@ func (r *RepositoryRule) UnmarshalJSON(data []byte) error {
 		rawParams := json.RawMessage(bytes)
 
 		r.Parameters = &rawParams
-========
->>>>>>>> 9fdf83e2 (Merge branch 'main' into Support-repository_property-for-github_organization_ruleset):vendor/github.com/google/go-github/v65/github/repos_rules.go
 	default:
 		r.Type = ""
 		r.Parameters = nil
@@ -740,7 +726,6 @@ func NewRequiredWorkflowsRule(params *RequiredWorkflowsRuleParameters) (rule *Re
 	}
 }
 
-<<<<<<<< HEAD:vendor/github.com/google/go-github/v66/github/repos_rules.go
 // NewRequiredCodeScanningRule creates a rule to require which tools must provide code scanning results before the reference is updated.
 func NewRequiredCodeScanningRule(params *RequiredCodeScanningRuleParameters) (rule *RepositoryRule) {
 	bytes, _ := json.Marshal(params)
@@ -753,8 +738,6 @@ func NewRequiredCodeScanningRule(params *RequiredCodeScanningRuleParameters) (ru
 	}
 }
 
-========
->>>>>>>> 9fdf83e2 (Merge branch 'main' into Support-repository_property-for-github_organization_ruleset):vendor/github.com/google/go-github/v65/github/repos_rules.go
 // NewFilePathRestrictionRule creates a rule to restrict file paths from being pushed to.
 func NewFilePathRestrictionRule(params *RuleFileParameters) (rule *RepositoryRule) {
 	bytes, _ := json.Marshal(params)
@@ -767,7 +750,6 @@ func NewFilePathRestrictionRule(params *RuleFileParameters) (rule *RepositoryRul
 	}
 }
 
-<<<<<<<< HEAD:vendor/github.com/google/go-github/v66/github/repos_rules.go
 // NewMaxFilePathLengthRule creates a rule to restrict file paths longer than the limit from being pushed.
 func NewMaxFilePathLengthRule(params *RuleMaxFilePathLengthParameters) (rule *RepositoryRule) {
 	bytes, _ := json.Marshal(params)
@@ -804,8 +786,6 @@ func NewMaxFileSizeRule(params *RuleMaxFileSizeParameters) (rule *RepositoryRule
 	}
 }
 
-========
->>>>>>>> 9fdf83e2 (Merge branch 'main' into Support-repository_property-for-github_organization_ruleset):vendor/github.com/google/go-github/v65/github/repos_rules.go
 // Ruleset represents a GitHub ruleset object.
 type Ruleset struct {
 	ID   *int64 `json:"id,omitempty"`

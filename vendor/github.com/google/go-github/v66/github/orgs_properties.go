@@ -8,10 +8,7 @@ package github
 import (
 	"context"
 	"encoding/json"
-<<<<<<<< HEAD:vendor/github.com/google/go-github/v66/github/orgs_properties.go
 	"errors"
-========
->>>>>>>> 9fdf83e2 (Merge branch 'main' into Support-repository_property-for-github_organization_ruleset):vendor/github.com/google/go-github/v65/github/orgs_properties.go
 	"fmt"
 )
 
@@ -46,11 +43,7 @@ type RepoCustomPropertyValue struct {
 // CustomPropertyValue represents a custom property value.
 type CustomPropertyValue struct {
 	PropertyName string      `json:"property_name"`
-<<<<<<<< HEAD:vendor/github.com/google/go-github/v66/github/orgs_properties.go
 	Value        interface{} `json:"value"`
-========
-	Value        interface{} `json:"value,omitempty"`
->>>>>>>> 9fdf83e2 (Merge branch 'main' into Support-repository_property-for-github_organization_ruleset):vendor/github.com/google/go-github/v65/github/orgs_properties.go
 }
 
 // UnmarshalJSON implements the json.Unmarshaler interface.
@@ -77,11 +70,7 @@ func (cpv *CustomPropertyValue) UnmarshalJSON(data []byte) error {
 			if str, ok := item.(string); ok {
 				strSlice[i] = str
 			} else {
-<<<<<<<< HEAD:vendor/github.com/google/go-github/v66/github/orgs_properties.go
 				return errors.New("non-string value in string array")
-========
-				return fmt.Errorf("non-string value in string array")
->>>>>>>> 9fdf83e2 (Merge branch 'main' into Support-repository_property-for-github_organization_ruleset):vendor/github.com/google/go-github/v65/github/orgs_properties.go
 			}
 		}
 		cpv.Value = strSlice

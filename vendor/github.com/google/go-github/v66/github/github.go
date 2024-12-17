@@ -28,11 +28,7 @@ import (
 )
 
 const (
-<<<<<<<< HEAD:vendor/github.com/google/go-github/v66/github/github.go
 	Version = "v66.0.0"
-========
-	Version = "v65.0.0"
->>>>>>>> 9fdf83e2 (Merge branch 'main' into Support-repository_property-for-github_organization_ruleset):vendor/github.com/google/go-github/v65/github/github.go
 
 	defaultAPIVersion = "2022-11-28"
 	defaultBaseURL    = "https://api.github.com/"
